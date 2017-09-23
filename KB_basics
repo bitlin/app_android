@@ -68,4 +68,17 @@ Android versions have a version number and a codename. The version number gives 
 	4.4              KitKat		        19 ~ 20
 	5.0~5.1          Lollipop           21 ~ 22
 	6.0              Marshmallow          23
+When you develop Android apps, you really need to consider which versions of Android you want your app to be compatible with. If you specify that your app is only compatible with the very latest version of the SDK, you might find that it can’t be run on many devices. You can find out the percentage of devices running particular versions here: https://developer.android.com/ about/dashboards/index.html.
+
+
+Every Android app is a collection of screens, and each screen is composed of an activity and a layout.
+Let’s look in more detail at how activities and layouts work together to create a user interface:
+1. The device launches your app and creates an activity object.
+2. The activity object specifies a layout.
+3. The activity tells Android to display the layout onscreen.
+4. The user interacts with the layout that’s displayed on the device.
+5. The activity responds to these interactions by running application code.
+6. The activity updates the display...
+7. ...which the user sees on the device.
+
 
