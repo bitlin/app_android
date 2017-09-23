@@ -1,0 +1,71 @@
+Layouts only define the appearance of the app. You define what the app does using one or more activities. An activity is a special Java class that decides which layout to use and tells the app how to respond to the user. As an example, if a layout includes a button, you need to write Java code in the activity to define what the button should do when you press it.
+
+In addition to activities and layouts, Android apps often need extra resources such as image files and application data. You can add any extra files you need to the app.
+Android apps are really just a bunch of files in particular directories. When you build your app, all of these files get bundled together, giving you an app you can run on your device.
+
+The Android platform is made up of a number of different components. It includes core applications such as Contacts, a set of APIs to help you control what your app looks like and how it behaves, and a whole load of supporting files and libraries.
+
+The Android platform dissected：
+
+Linux Kernel: 
+Android relies on the kernel for drivers, and also core services such as security and memory management.  
+1. Display Driver 
+2. Camera Driver
+3. Flash Memory Driver
+4. Binder (IPC) Driver
+5. Keypad Driver
+6. WiFi Driver
+7. Audio Drivers
+8. Power Management
+
+Libraries：
+Underneath the application framework lies a set of C and C++ libraries. These libraries get exposed to you through the framework APIs.
+1. Surface Manager
+2. Media Framework
+3. SQLite
+4. OpenGL | ES
+5. FreeType
+6. WebKit
+7. SGL
+8. SSL
+9. libc
+
+Android Runtime: Core Libraries
+The Android runtime comes with a set of core libraries that implement most of the Java programming language. Each Android app runs in its own process.
+
+Application Framework
+When you build apps, you have access to the same APIs used by the core applications. You use these APIs to control what your app looks like and how it behaves.
+1. Activity Manager
+2. Window Manager
+3. Content Providers
+4. View System
+5. Package Manager
+6. Telephony Manager
+7. Resource Manager
+8. Location Manager
+9. Notification Manager
+
+Applications
+Android comes with a set of core applications such as Home, Contacts, Phone, Calendar, and a browser
+
+
+Android SDK (Android Software Development Kit)
+The Android Software Development Kit contains the libraries and tools you need to develop Android apps. 
+1. SDK platform: There’s one of these for each version of Android.
+2. SDK Tools: Tools for debugging and testing, plus other useful utilities. The SDK also features a set of platform dependent tools.
+3. Documentation: So you can access the latest API documentation offline.
+4. Android support: Extra APIs that aren’t available in the standard platform.
+5. and so on
+
+Android Studio
+Android Studio is a version of IDEA that includes a version of the Android SDK and extra GUI tools to help you with your app development.
+In addition to providing you with an editor and access to the tools and libraries in the Android SDK, Android Studio gives you templates you can use to help you create new apps and classes, and it makes it easy to do things such as package your apps and run them.
+
+Android Versions
+Android versions have a version number and a codename. The version number gives the precise version of Android (e.g., 7.0), while the codename is a more generic “friendly” name that may cover several versions of Android (e.g., Nougat). The API level refers to the version of the APIs used by applications. As an example, the equivalent API level for Android version 7.1.1 is 25.
+	Version         codename          API level
+	4.1~ 4.3         Jelly Bean         16 ~ 18
+	4.4              KitKat		        19 ~ 20
+	5.0~5.1          Lollipop           21 ~ 22
+	6.0              Marshmallow          23
+
