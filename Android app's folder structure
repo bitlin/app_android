@@ -1,0 +1,19 @@
+Android app's source folder structure:
+1. Java and XML source files: These are the activity and layout files for your app.
+2. Android-generated Java files: There are some extra Java files you don’t need to touch that Android Studio generates for you automatically.
+3. Resource files: These include default image files for icons, styles your app might use, and any common String values your app might want to look up.
+4. Android libraries: In the wizard, you specified the minimum SDK version you want your app to be compatible with. Android Studio makes sure your app includes the relevant Android libraries for that version.
+5. Configuration files: The configuration files tell Android what’s actually in the app and how it should run.
+
+
+AndroidManifest: 
+Every Android app must include a file called AndroidManifest.xml at its root. The manifest file contains essential information about the app, such as what components it contains, required libraries, and other declarations.
+
+
+
+The activity controls what the app does
+Android Studio created an activity for us called MainActivity.java. The activity specifies what the app does and how it should respond to the user.
+
+
+The layout controls the app's appearance
+MainActivity.java specifies that it uses the layout Android Studio created for us called activity_main.xml. The layout specifies what the app looks like.

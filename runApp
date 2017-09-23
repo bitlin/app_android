@@ -1,0 +1,27 @@
+You have a couple of options when it comes to running your apps. The first option is to run them on a physical device. But what if you don’t have one with you, or you want to see how your app looks on a type of device you don’t have?
+In that case, you can use the Android emulator that’s built into the Android SDK. The emulator enables you to set up one or more Android virtual devices (AVDs) and then run your app in the emulator as though it’s running on a physical device.
+
+Create an Android Virtual Device: 
+ With Android Studio:
+	1. Open the Android Virtual Device Manager
+	2. The AVD Manager allows you to set up new AVDs, and view and edit ones you’ve already created. 
+	3. Select the hardware: On the next screen, you’ll be prompted to choose a device definition. This is the type of device your AVD will emulate.
+	4. Select a system image: The system image gives you an installed version of the Android operating system. You can choose the version of Android you want to be on your AVD.   You need to choose a system image for an API level that’s compatible with the app you’re building. As an example, if you want your app to work on a minimum of API level 19, choose a system image for at least API level 19.
+	5. Verify the AVD configuration: This screen summarizes the options you chose over the last few screens, and gives you the option of changing them. 
+	The AVD Manager will create the AVD for you, and when it’s done, display it in the AVD Manager list of devices.
+
+
+An APK file is an Android application package. It’s basically a JAR or ZIP file for Android applications.
+The APK file includes the compiled Java files, along with any libraries and resources needed by your app.
+
+Run: 
+ 1. The Java source files get compiled to bytecode.  Your code doesn’t actually run inside an ordinary Java VM. It runs on the Android runtime (ART) instead
+ 2. An Android application package, or APK file, gets created.
+ 3. Assuming there’s not one already running, the emulator gets launched and then runs the AVD.
+ 4. Once the emulator has been launched and the AVD is active, the APK file is uploaded to the AVD and installed.
+ 5. When the app gets launched, the AVD starts the main activity associated with the app. An activity object is created from MainActivity.java.
+ 6. The activity specifies that it uses the layout (e.g. activity_main.xml).
+ 7. The activity tells Android to display the layout on the screen.
+ 
+
+ Your app gets displayed on the AVD screen, and it’s all ready for you to test out. You can watch progress in the console
