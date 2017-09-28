@@ -22,6 +22,4 @@ Run:
  5. When the app gets launched, the AVD starts the main activity associated with the app. An activity object is created from MainActivity.java.
  6. The activity specifies that it uses the layout (e.g. activity_main.xml).
  7. The activity tells Android to display the layout on the screen.
- 
-
  Your app gets displayed on the AVD screen, and it’s all ready for you to test out. You can watch progress in the console
