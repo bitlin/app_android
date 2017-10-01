@@ -1,4 +1,4 @@
-package bitlin.example.android.beeradviser;
+package bitlin.example.android.fruitAdviser;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

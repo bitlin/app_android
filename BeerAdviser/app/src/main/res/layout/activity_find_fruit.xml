@@ -7,11 +7,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context="bitlin.example.android.beeradviser.FindBeerActivity">
+    tools:context="bitlin.example.android.fruitAdviser.FindFruitActivity">
 
     <Spinner
         android:id="@+id/color"
-        android:entries="@array/beer_colors"
+        android:entries="@array/fruit_colors"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -20,19 +20,19 @@
 
         />
     <Button
-        android:id="@+id/find_beer"
-        android:onClick="onClickFindBeer"
+        android:id="@+id/find_fruit"
+        android:onClick="onClickFindFruit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="16dp"
-        android:text="@string/find_beer"/>
+        android:text="@string/find_fruit"/>
 
     <TextView
-        android:id="@+id/brands"
+        android:id="@+id/fruits"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="16dp"
-        android:text="@string/brands"/>
+        android:text="@string/fruits"/>
 </LinearLayout>

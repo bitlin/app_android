@@ -1,4 +1,4 @@
-package bitlin.example.android.beeradviser;
+package bitlin.example.android.fruitAdviser;
 
 import org.junit.Test;
 
