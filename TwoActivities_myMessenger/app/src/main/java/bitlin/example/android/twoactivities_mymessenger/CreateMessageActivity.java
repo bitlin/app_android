@@ -21,5 +21,7 @@ public class CreateMessageActivity extends Activity {
 //  Android will then start the second activity and pass it the intent.
         Intent intent=new Intent(this, ReceiveMessageActivity.class);
         startActivity(intent);
+
+//  we’ll get CreateMessageActivity to pass text to ReceiveMessageActivity so that ReceiveMessageActivity can display it.
     }
 }
