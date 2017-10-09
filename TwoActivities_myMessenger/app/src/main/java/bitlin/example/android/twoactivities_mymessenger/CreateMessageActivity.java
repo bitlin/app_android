@@ -15,7 +15,7 @@ public class CreateMessageActivity extends Activity {
     }
 
     //Call onSendMessage() when the button is clicked
-    public void onSendMessge(View view){
+    public void onSendMessage(View view){
         EditText messageView=(EditText)findViewById(R.id.message);
         String messageText=messageView.getText().toString();
 //  Whenever you want an activity to start a second activity, you use an intent. You can think of an intent as an “intent to do something.”
@@ -27,7 +27,5 @@ public class CreateMessageActivity extends Activity {
 //   You can add extra information to this intent that can be picked up by the activity you’re targeting so it can react in some way.
         intent.putExtra(ReceiveMessageActivity.EXTRA_MESSAGE,messageText);
         startActivity(intent);
-
-//
     }
 }
