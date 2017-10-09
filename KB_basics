@@ -82,3 +82,6 @@ Let’s look in more detail at how activities and layouts work together to creat
 7. ...which the user sees on the device.
 
 
+# Create the second activity and layout
+To create the new activity, switch to the Project view of Android Studio’s explorer, click on the com.xxx.xxxx package in the app/src/main/java folder, choose File → New → Activity, and choose the option for Empty Activity. You will be presented with a new screen where you can choose options for your new activity.
+Every time you create a new activity and layout, you need to name them
