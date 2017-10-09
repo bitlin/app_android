@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 
-public class activity_create_message extends Activity {
+public class CreateMessageActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

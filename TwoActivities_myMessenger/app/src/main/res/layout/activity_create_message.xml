@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:padding="16dp"
     android:orientation="vertical"
-    tools:context="bitlin.example.android.twoactivities_mymessenger.activity_create_message">
+    tools:context="bitlin.example.android.twoactivities_mymessenger.CreateMessageActivity">
 
     <EditText
         android:id="@+id/message"
