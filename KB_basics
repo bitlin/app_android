@@ -93,3 +93,21 @@ In order to accomplish this, we’ll do three things:
 1 Tweak the layout activity_receive_message.xml so that it can display the text. At the moment it’s simply the default layout the wizard gave us.
 2 Update CreateMessageActivity.java so that it gets the text the user inputs, and then adds the text to the intent before it sends it.
 3 Update ReceiveMessageActivity.java so that it displays the text sent in the intent.
+
+How Android apps work
+As you’ve seen, all Android apps are composed of one or more activities, along with other components such as layouts. Each activity is a single defined focused thing the user can do. As an example, apps such as Gmail, Google+, Facebook, and Twitter all have activities that enable you to send messages, even though they may achieve this in different ways.
+
+Intents can start activities in other apps
+You’ve already seen how you can use an intent to start a second activity within the same app. The first activity passes an intent to Android, Android checks it, and then Android tells the second activity to start.
+The same principle applies to activities in other apps. You get an activity in your app to pass an intent to Android, Android checks it, and then Android tells the second activity to start even though it’s in another app. 
+
+
+Intent intent= new Intent(Intent.ACTION_SEND);
+intent.setType("text/plain");
+intent.putExtra(Intent.EXTRA_TEXT,messageText);
+startActivity(intent);
+1. When the onSendMessage() method is called, an intent gets created. The startActivity() method passes this intent to Android.
+2. Android sees that the intent can only be passed to activities able to handle ACTION_SEND and text/plain data. Android checks all the activities on the user’s device, looking for ones that are able to receive the intent. If no actions are able to handle the intent, an ActivityNotFoundException is thrown.
+3. If just one activity is able to receive the intent, Android tells that activity to start and passes it the intent.
+4. If more than one activity is able to receive the intent, Android displays an activity chooser dialog and asks the user which one to use.
+5. When the user chooses the activity she wants to use, Android tells the activity to start and passes it the intent.
