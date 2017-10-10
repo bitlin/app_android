@@ -2,6 +2,7 @@ package bitlin.example.android.twoactivities_mymessenger;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -40,6 +41,27 @@ public class CreateMessageActivity extends Activity {
         Intent intent= new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
         intent.putExtra(Intent.EXTRA_TEXT,messageText);
-        startActivity(intent);
+//        startActivity(intent);
+
+// You can create a chooser that asks users to pick an activity without giving them the option to always use that activity.
+// You can achieve this using the Intent.createChooser() method, which takes the intent you’ve already created and wraps it in a chooser dialog.
+// When you use this method, the user isn’t given the option of choosing a default activity—they get asked to choose one every time.
+
+//        The getString() method is used to get the value of a String resource. It takes one parameter, the ID of the resource
+        String chooserTitle=getString(R.string.chooser);
+//        The method takes two parameters: an intent and an optional String title for the chooser dialog window.
+//        The Intent parameter needs to describe the types of activity you want the chooser to display.
+        Intent chosenIntent = Intent.createChooser(intent, chooserTitle);
+
+//        This is a new explicit intent that’s targeted at the activity chosen by the user. It includes any extra information supplied by the original intent, including any text.
+//        To start the activity the user chose, you need to call:
+        startActivity(chosenIntent);
+
+//        If no activities are found, Android still displays the chooser but shows a message telling the user there are no apps that can perform the action.
+
+
+// Note: You can check whether any activities on the device are able to receive the intent by calling the intent’s resolveActivity() method and checking its return value.
+// If its return value is null, no activities on the device are able to receive the intent, so you shouldn’t call startActivity().
+
     }
 }
