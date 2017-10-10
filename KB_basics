@@ -94,7 +94,7 @@ In order to accomplish this, we’ll do three things:
 2 Update CreateMessageActivity.java so that it gets the text the user inputs, and then adds the text to the intent before it sends it.
 3 Update ReceiveMessageActivity.java so that it displays the text sent in the intent.
 
-How Android apps work
+# How Android apps work
 As you’ve seen, all Android apps are composed of one or more activities, along with other components such as layouts. Each activity is a single defined focused thing the user can do. As an example, apps such as Gmail, Google+, Facebook, and Twitter all have activities that enable you to send messages, even though they may achieve this in different ways.
 
 Intents can start activities in other apps
@@ -111,3 +111,36 @@ startActivity(intent);
 3. If just one activity is able to receive the intent, Android tells that activity to start and passes it the intent.
 4. If more than one activity is able to receive the intent, Android displays an activity chooser dialog and asks the user which one to use.
 5. When the user chooses the activity she wants to use, Android tells the activity to start and passes it the intent.
+
+
+The intent filter tells Android which activities can handle which actions
+When Android is given an intent, it has to figure out which activity, or activities, can handle it. This process is known as intent resolution.
+* When you use an explicit intent, intent resolution is straightforward. The intent explicitly says which component the intent is directed at, so Android has clear instructions about what to do.
+* When you use an implicit intent, Android uses the information in the intent to figure out which components are able to receive it. It does this by checking the intent filters in every app’s copy of AndroidManifest.xml. An intent filter specifies what types of intent each component can receive.  
+
+As an example, here’s the entry for an activity that can handle an action of ACTION_SEND. The activity is able to accept data with MIME types of text/plain or image:
+<activity android:name="ShareActivity">
+<intent-filter>
+	<action android:name="android.intent.action.SEND"/> 
+	<category android:name="android.intent.category.DEFAULT"/> 
+	<data android:mimeType="text/plain"/>
+	<data android:mimeType="image/*"/>
+</intent-filter>
+</activity>
+The intent filter also specifies a category. The category supplies extra information about the activity such as whether it can be started by a web browser, or whether it’s the main entry point of the app. An intent filter must include a category of android.intent.category. DEFAULT if it’s to receive implicit intents. If an activity has no intent filter, or it doesn’t include a category name of android.intent. category.DEFAULT, it means that the activity can’t be started with an implicit intent. It can only be started with an explicit intent using the full name (including the package) of the component.
+
+# How Android uses the intent filter
+When you use an implicit intent, Android compares the information given in the intent with the information given in the intent filters specified in every app’s AndroidManifest.xml file. 
+1. Android first considers intent filters that include a category of android. intent.category.DEFAULT:
+2. Intent filters without this category will be omitted, as they can’t receive implicit intents.
+3. Android then matches intents to intent filters by comparing the action and MIME type contained in the intent with those of the intent filters.
+As an example, if an intent specifies an action of Intent.ACTION_SEND using:
+Intent intent = new Intent(Intent.ACTION_SEND);
+Android will only consider activities that specify an intent filter with an action of android.intent.action.SEND like this:
+<intent-filter>
+	<action android:name="android.intent.action.SEND"/> ...
+</intent-filter>
+
+Similarly, for the intent MIME type. If the MIME type is left out of the intent, Android tries to infer the type based on the data the intent contains.
+4. Once Android has finished comparing the intent to the component’s intent filters, it sees how many matches it finds. If Android finds a single match, it starts the component (in our case, the activity) and passes it the intent. If it finds multiple matches, it asks the user to pick one.
+
