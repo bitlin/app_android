@@ -7,4 +7,19 @@
     android:layout_height="match_parent"
     tools:context="bitlin.example.android.starbuzz.DrinkCategoryActivity">
 
+
+    <!--There’s one key difference between the list view we’re creating here, and the one we created in activity_top_activity.xml:
+    there’s no android:entries attribute here.
+    Because, there’s one key difference between the list view we’re creating here, and the one we created in activity_top_activity.xml: there’s no android:entries attribute here.
+    If you need to bind your list view to data held in something other than a String array resource, you need to take a different approach;-->
+    <!--If you need to display data in a list view that comes from a source other than strings.xml (such as a Java array or database), you need to use an adapter.
+    An adapter acts as a bridge between the data source and the list view:-->
+    <ListView
+        android:id="@+id/list_drinks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+
+
 </android.support.constraint.ConstraintLayout>
