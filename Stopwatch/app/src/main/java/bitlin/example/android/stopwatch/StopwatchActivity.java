@@ -84,22 +84,46 @@ public class StopwatchActivity extends Activity {
         savedInstanceState.putBoolean("wasRunning",wasRunning);
     }
 
+//    @Override
+//    protected void onStop(){
+//        //This calls the onStop() method in the activity’s superclass, android.app.Activity.
+//        super.onStop();
+////      Save the running status before onStop（the running status is set to false）
+//        wasRunning=running;
+////        So now the stopwatch stops when the activity is no longer visible.
+//        running=false;
+//    }
+//
+//    @Override
+//    protected void onStart(){
+//        super.onStart();
+//        //恢复stop之前的运行状态
+//        if(wasRunning){
+//            running=true;
+//        }
+//    }
+
+
+//    Another activity appears in the foreground, leaving StopwatchActivity partially visible.
+// The onPause() method gets called, wasRunning is set to true, running is set to false, and the number of seconds stops incrementing.
+    //If the activity's paused, stop the stopwatch
     @Override
-    protected void onStop(){
-        //This calls the onStop() method in the activity’s superclass, android.app.Activity.
-        super.onStop();
-//      Save the running status before onStop（the running status is set to false）
-        wasRunning=running;
-//        So now the stopwatch stops when the activity is no longer visible.
-        running=false;
+    protected void onPause() {
+        super.onPause();
+        wasRunning = running;
+        running = false;
     }
 
+
+    //When StopwatchActivity returns to the foreground, the onResume() method gets called, running is set to true,
+    // and the number of seconds starts incrementing again
+
+    //If the activity's resumed, start the stopwatch again if it was running previously
     @Override
-    protected void onStart(){
-        super.onStart();
-        //恢复stop之前的运行状态
-        if(wasRunning){
-            running=true;
+    protected void onResume() {
+        super.onResume();
+        if (wasRunning) {
+            running = true;
         }
     }
 }
