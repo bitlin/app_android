@@ -8,6 +8,12 @@
     android:orientation="vertical"
     android:padding="16dp"
     tools:context="bitlin.example.android.stopwatch.StopwatchActivity">
+<!--The xmlns:android attribute is used to specify the Android namespace, and you must always set it to "http://schemas. android.com/apk/res/android".
+The android:layout_width and android:layout_height attributes specify how wide and high you want the layout to be. These attributes are mandatory for all types of layout and view.
+"wrap_content" means that you want the layout to be just big enough to hold all of the views inside it, and "match_parent" means that you want the layout to be as big as its parent
+If you want there to be a bit of space around the edge of the layout, you can set padding attributes.
+These attributes tell Android how much padding you want between each of the layout’s sides and its parent.
+-->
 
     <TextView
         android:id="@+id/time_view"
@@ -17,6 +23,9 @@
         android:textAppearance="@android:style/TextAppearance.Large"
         android:textSize="56sp"
         />
+    <!--Use margins to add distance between views
+    When you position a view using a linear layout, the layout doesn’t leave much of a gap between views.
+    You can increase the size of the gap by adding one or more margins to the view.-->
     <Button
         android:id="@+id/start_button"
         android:layout_width="wrap_content"
