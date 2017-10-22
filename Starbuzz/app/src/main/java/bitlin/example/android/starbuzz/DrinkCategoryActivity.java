@@ -1,7 +1,10 @@
 package bitlin.example.android.starbuzz;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -25,6 +28,21 @@ public class DrinkCategoryActivity extends Activity {
         listDrinks.setAdapter(listAdapter);
 // Behind the scenes, the array adapter takes each item in the array, converts it to a String using its toString() method,
 // and puts each result into a text view. It then displays each text view as a single row in the list view.
+
+//        Create the listener
+        AdapterView.OnItemClickListener itemClickListener=new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> listDrinks, View itemView, int position, long id) {
+                //Pass the drink the user clicks on to DrinkActivity
+                Intent intent = new Intent(DrinkCategoryActivity.this, DrinkActivity.class);
+
+// When you use a category activity to display items in a list view, you’ll usually use the onItemClick() method to start another activity that displays details of the item the user clicked.
+// To do this, you create an intent that starts the second activity. You then add the ID of the item that was clicked as extra information so that the second activity can use it when the activity starts.
+                intent.putExtra(DrinkActivity.EXTRA_DRINKID, (int)id); //id is the index of the drink in the drinks array
+                startActivity(intent);
+            }
+        };
+        listDrinks.setOnItemClickListener(itemClickListener);
     }
 }
 
