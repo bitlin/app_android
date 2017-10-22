@@ -15,6 +15,7 @@ public class StopwatchActivity extends Activity {
 //    Use the seconds and running variables to record the number of seconds passed and whether the stopwatch is running
     private int seconds=0;
     private boolean running;
+    private boolean wasRunning; //Record the running state before activity being destroyed
 
 //    The onCreate() method gets called immediately after your activity is launched.
     @Override
@@ -25,7 +26,9 @@ public class StopwatchActivity extends Activity {
         if (savedInstanceState != null) {
             seconds = savedInstanceState.getInt("seconds");
             running = savedInstanceState.getBoolean("running");
+            wasRunning=savedInstanceState.getBoolean("wasRunning");
         }
+        //在界面上点击start操作之前，runTimer()已经在运行
         runTimer();
     }
 
@@ -78,5 +81,27 @@ public class StopwatchActivity extends Activity {
     public void onSaveInstanceState(Bundle savedInstanceState) {
         savedInstanceState.putInt("seconds", seconds);
         savedInstanceState.putBoolean("running", running);
+        savedInstanceState.putBoolean("wasRunning",wasRunning);
+    }
+
+    @Override
+    protected void onStop(){
+        //This calls the onStop() method in the activity’s superclass, android.app.Activity.
+        super.onStop();
+//      Save the running status before onStop（the running status is set to false）
+        wasRunning=running;
+//        So now the stopwatch stops when the activity is no longer visible.
+        running=false;
+    }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+        //恢复stop之前的运行状态
+        if(wasRunning){
+            running=true;
+        }
     }
 }
+
+
