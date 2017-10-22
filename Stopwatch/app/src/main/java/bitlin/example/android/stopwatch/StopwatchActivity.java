@@ -21,6 +21,11 @@ public class StopwatchActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stopwatch);
+//        Retrieve the values of the seconds and running variables from the Bundle.
+        if (savedInstanceState != null) {
+            seconds = savedInstanceState.getInt("seconds");
+            running = savedInstanceState.getBoolean("running");
+        }
         runTimer();
     }
 
@@ -59,5 +64,19 @@ public class StopwatchActivity extends Activity {
             handler.postDelayed(this, 1000);
         }
     });
+    }
+
+//    When Android runs your app and starts an activity, it takes into account the device configuration.
+// By this we mean the configuration of the physical device (such as the screen size, screen orientation,
+// and whether there’s a keyboard attached) and also configuration options specified by the user (such as the locale).
+//A change to any of these options results in the activity being destroyed and then recreated.
+
+//    To save the activity’s current state, you need to implement the onSaveInstanceState() method.
+// This method gets called before the activity gets destroyed, which means you get an opportunity to save any values you want to retain before they get lost.
+//The onSaveInstanceState() method takes one parameter, a Bundle. A Bundle allows you to gather together different types of data into a single object:
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        savedInstanceState.putInt("seconds", seconds);
+        savedInstanceState.putBoolean("running", running);
     }
 }
