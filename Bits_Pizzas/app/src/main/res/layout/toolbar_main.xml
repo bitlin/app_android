@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <!--android.support.v7.widget.Toolbar: This is the full path of the Toolbar class in the Support Library.
+The ?attr prefix means that you want to use an attribute from the current theme. In this particular case, ?attr/actionBarSize is the height of an app bar that’s specified in our theme.-->
+    <android.support.v7.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <!--Remember that a toolbar is a view like any other view, so you need to take this into account when you’re positioning your other views.-->
