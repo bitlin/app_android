@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--The <menu> element identifies the file as a menu resource file.-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--The <item> element defines the action.-->
+    <!--You use attributes of <item> to describe each action. The code creates an action with an id of action_create_order.
+    This is so that we can refer to the action in our activity code, and respond to the user clicking on it.
+    The action includes a number of other attributes that determine how the action appears on the app bar, such as its icon and text. -->
+    <item android:id="@+id/action_create_order"
+          android:title="@string/create_order_title"
+          android:icon="@drawable/ic_add_white_24dp"
+          android:orderInCategory="1"
+          app:showAsAction="ifRoom" />
+    <!--ifRoom: Place the item in the app bar if there’s space. If there’s not space, put it in the overflow-->
+</menu>
+
+<!--The menu resource file has a <menu> element at its root. Inside the <menu> element, you get a number of <item> elements, each one describing a separate action. -->
