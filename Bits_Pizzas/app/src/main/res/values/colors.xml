@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+    <!--A color resource file is similar to a String resource file except that it contains colors instead of Strings.
+    Using a color resource file makes it easy to make changes to the color scheme of your app, as all the colors you want to use are held in one place.-->
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>

@@ -2,6 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="bitlin.example.android.bits_pizzas">
 
+    <!--The android:icon attribute assigns an icon to the app. The icon is used as the launcher icon for the app
+    The android:label attribute describes a user-friendly label that gets displayed in the app bar.     -->
+    <!--The android:theme attribute specifies the theme. Using this attribute in the <application> element applies the theme to the entire app.
+     Using it in the <activity> element applies the theme to a single activity.-->
+
+    <!--To apply a theme using a style, you update the android:theme attribute in AndroidManifest.xml to the name of a style resource: android:theme="@style/AppTheme"
+    The @style prefix tells Android that the theme the app’s using is a style that’s defined in a style resource file.
+    The style resource file holds details of any themes and styles you want to use in your app.
+    the IDE will usually create a default style resource file for you called styles.xml located in the app/src/main/res/values folder.-->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
