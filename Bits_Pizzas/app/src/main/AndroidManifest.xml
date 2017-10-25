@@ -32,7 +32,8 @@ To apply a theme using a style, you update the android:theme attribute in Androi
         </activity>
         <!--We want to override the label for OrderActivity so that the text “Create Order” gets displayed in the app bar whenever OrderActivity has the focus. -->
         <activity android:name=".OrderActivity"
-            android:label="@string/create_order">
+            android:label="@string/create_order"
+            android:parentActivityName=".MainActivity">
         </activity>
     </application>
 
