@@ -38,3 +38,4 @@ public class DrinkActivity extends Activity {
         photo.setContentDescription(drink.getName());
     }
 }
+
