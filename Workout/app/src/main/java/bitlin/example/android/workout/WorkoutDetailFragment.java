@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 
 public class WorkoutDetailFragment extends Fragment {
@@ -33,6 +34,21 @@ public class WorkoutDetailFragment extends Fragment {
 //      You use it to say what layout the fragment should use, in this case R.layout.fragment_ workout_detail.
 //      The inflate() method’s container argument specifies the ViewGroup in the activity that the fragment’s layout needs to be inserted into.
         return inflater.inflate(R.layout.fragment_workout_detail, container, false);
+    }
+
+//  Fragments are distinct from activities, and therefore don’t have all the methods that an activity does. Fragments don’t include a findViewById() method, for instance.
+//  To get a reference to a fragment’s views, we first have to get a reference to the fragment’s root view using the getView() method, and use that to find its child views.
+    @Override
+    public void onStart()
+    {
+        super.onStart();
+//        The getView() method gets the fragment's root View. We can then use this to get references to the workout title and description text views.
+        View view=getView();
+        TextView title=(TextView)view.findViewById(R.id.textTitle);
+        Workout workout = Workout.workouts[(int) workoutId];
+        title.setText(workout.getName());
+        TextView description = (TextView) view.findViewById(R.id.textDescription);
+        description.setText(workout.getDescription());
     }
 
 //    The activity will use this method to set the value of the workout ID.
