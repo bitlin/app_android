@@ -9,6 +9,11 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+//      Before an activity can talk to its fragment, the activity first needs to get a reference to the fragment.
+//      You get a reference to an activity’s fragments using the activity’s fragment manager.
+//      The fragment manager is used to keep track of and deal with any fragments used by the activity.
+        WorkoutDetailFragment frag=(WorkoutDetailFragment)getSupportFragmentManager().findFragmentById(R.id.detail_flag);
+        frag.setWorkout(1);
     }
 }
 

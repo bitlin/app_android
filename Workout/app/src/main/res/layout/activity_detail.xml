@@ -5,6 +5,7 @@
 To do this, we’re going to add a <fragment> element to DetailActivity’s layout.-->
 <fragment
     android:name="bitlin.example.android.workout.WorkoutDetailFragment"
+    android:id="@+id/detail_flag"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"/>
