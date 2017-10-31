@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="bitlin.example.android.workout.DetailActivity">
+
+
 <!--We’re going to add our WorkoutDetailFragment to DetailActivity so that the fragment gets displayed in the activity’s layout.
 To do this, we’re going to add a <fragment> element to DetailActivity’s layout.-->
-    <fragment
-        android:name="bitlin.example.android.workout.WorkoutDetailFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+<fragment
+    android:name="bitlin.example.android.workout.WorkoutDetailFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"/>
     <!--When Android creates the activity’s layout, it replaces the <fragment> element with the View object returned by the fragment’s onCreateView() method.
     This view is the fragment’s user interface, so the <fragment> element is really a placeholder for where the fragment’s layout should be inserted.-->
 
-</android.support.constraint.ConstraintLayout>
